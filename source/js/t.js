@@ -12,9 +12,9 @@ window.addEventListener('load', function () {
 	});
 	let bgimg = Math.floor(Math.random() * 9) + 1;
 	document.body.style.background = "url(https://api.maho.cc/random-img/pc.php?12) no-repeat"//"url(./source/img/background" + bgimg + ".webp) no-repeat"
-	loadJS('source/js/yinghua.js',function(){
+	// loadJS('source/js/yinghua.js',function(){
 
-	});
+	// });
 
 	showCard ("test","page-home");
 })
@@ -199,50 +199,6 @@ layui.use(['layer'], function () { //引入需要的模块
 			});
 		}
 	};
-	window.bt_tools_pma = function () {
-		window.open("http://www.feitu.tk/pma/", "_blank", "resizable,scrollbars,status");
-		iziToast.show({
-			timeout: 1000,
-			icon: "fa-solid fa-circle-exclamation",
-			message: '已在新窗口打开MySQL远程管理(PHPMyAdmin)'
-		});
-	};
-	$('#ads').click(function () {
-		layer.open({
-			title: 'FreeWha Ads',
-			content: '<span style="color:#000000">这是我们服务器提供商的广告 因此我们能确保其绝对真实<br>www.freewebhostingarea.com</span>',
-			btn: ['在当前页打开', '在新标签页中打开', '复制URL', "取消"],
-			yes: function(index, layero){
-				layer.open({
-					type: 2,
-					area: ['90%', '90%'],
-					title: 'Ads',
-					maxmin:true,
-					content: 'https://www.freewebhostingarea.com/',
-				});
-			},
-			btn2: function(index, layero){
-				window.open('https://www.freewebhostingarea.com/', '_blank'); 
-				iziToast.show({
-					timeout: 1000,
-					icon: "fa-solid fa-circle-exclamation",
-					message: '复制成功'
-				});
-			},
-			btn3: function(index, layero){
-				copy('https://www.freewebhostingarea.com/');
-				iziToast.show({
-					timeout: 1000,
-					icon: "fa-solid fa-circle-exclamation",
-					message: '复制成功'
-				});
-			},
-			cancel: function(){ 
-				//右上角关闭回调
-				//return false 开启该代码可禁止点击该按钮关闭
-			}
-		});
-	});
 });
 function copy(message) {
 	let transfer = document.createElement('input');

@@ -1,0 +1,9 @@
+{
+  "background_color": "purple",
+  "description": "NovelAI Tag 生成器 又名NovelAI魔导书",
+  "display": "fullscreen",
+  "icons": [],
+  "name": "NovelAI Tag Creater",
+  "short_name": "NovelAI Tags",
+  "start_url": "index.html"
+}

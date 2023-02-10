@@ -1,0 +1,321 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>NovelAI Tag Creater</title>
+		<meta name="description" content="在线免费生成NovelAI Tag 又名NovelAI魔导书!">
+		<meta name="keywords" content="novelai,tags,tag生成器,novel ai,ai画图">
+		<!-- 语言 -->
+		<meta http-equiv="Content-Language" contect="zh">
+		<!--移动端适配-->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- 避免IE使用兼容模式 -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<!--窗口设定-->
+		<meta http-equiv="Window-target" content="_top">
+		<!-- 针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓 -->
+		<meta name="HandheldFriendly" content="true">
+		<!-- 微软的老式浏览器 -->
+		<meta name="MobileOptimized" content="320">
+		<!-- windows phone 点击无高光 -->
+		<meta name="msapplication-tap-highlight" content="no">
+		<!--百度禁止转码-->
+		<meta http-equiv="Cache-Control" content="no-siteapp">
+		<!--360浏览器-->
+		<!--极速模式-->
+		<meta name="renderer" content="webkit">
+		<!--QQ手机浏览器-->
+		<!-- 全屏显示 -->
+		<meta name="x5-fullscreen" content="true">
+		<!-- 应用模式 -->
+		<meta name="x5-page-mode" content="app">
+		<!--UC浏览器-->
+		<!-- uc强制竖屏 -->
+		<meta name="screen-orientation" content="portrait">
+		<!-- UC强制全屏 -->
+		<meta name="full-screen" content="yes">
+		<!-- UC应用模式 -->
+		<meta name="browsermode" content="application">
+		<!-- 禁止自动探测手机/邮箱号码 -->
+		<meta name="format-detection" content="telphone=no, email=no">
+		<!-- Add to Home Screen添加到主屏 -->
+		<link rel="manifest" href="manifest.webmanifest">
+		<!-- 是否启用 WebApp 全屏模式 -->
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<!-- 设置状态栏的背景颜色,只有在 “apple-mobile-web-app-capable” content=”yes” 时生效 -->
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<!-- 添加到主屏后的标题 -->
+		<meta name="apple-mobile-web-app-title" content="Feitu">
+		<!--Google Android-->
+		<meta name="theme-color" content="#CCFFFF">
+		<!-- 添加到主屏 -->
+		<meta name="mobile-web-app-capable" content="yes">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<link rel="stylesheet" href="./css/layui.css" media="all">
+		<link rel="stylesheet" href="./css/style.css" media="all">
+		<!--link rel="stylesheet" href="./css/style.css"  media="all"-->
+		<!--link rel="stylesheet" href="../css/layui.mobile.css"  media="all"-->
+		<script src="./js/jquery.min.js"></script>
+
+		<link id="layuicss-laydate" rel="stylesheet" href="./css/laydate.css" media="all">
+		<link id="layuicss-layer" rel="stylesheet" href="./css/layer.css" media="all">
+		<link id="layuicss-skincodecss" rel="stylesheet" href="./css/code.css" media="all">
+	</head>
+	<body style="">
+		<div style="width:96%;margin-left:2%;margin-top:1vw;">
+			<h1 style="float: left;">NovelAI tag生成器 V1.0</h1>
+			<button class="layui-btn layui-btn-normal layui-btn-sm" style="margin-left: 5px;" onclick="showhint()">网站帮助</button>
+			<button class="layui-btn layui-btn-normal layui-btn-sm" style="margin-left: 5px;" onclick="showds()">更新日志</button>
+			<a target="_blank" href="https://github.com/CatNiangFeitu/NovelAI-Tag" style="float: right;">github已开源</a>
+			<hr>
+
+			<form class="layui-form" style="width:100%">
+
+				<div class="layui-input-block" style="display: inline-block;margin-left:0;">
+					<label class="layui-form-label" style="font-weight:bold;width: auto;">English</label>
+					<input type="checkbox" lay-filter="switchenglish" lay-skin="switch" lay-text="ON|OFF" checked="">
+					<div class="layui-unselect layui-form-switch layui-form-onswitch" lay-skin="_switch">
+						<em>ON</em>
+						<i></i>
+					</div>
+				</div>
+
+				<div class="layui-input-block" style="display: inline-block;margin-left:0;">
+					<label class="layui-form-label" style="font-weight:bold;width: auto;">中文</label>
+					<input type="checkbox" lay-filter="switchchinese" lay-skin="switch" lay-text="ON|OFF" checked="">
+					<div class="layui-unselect layui-form-switch layui-form-onswitch" lay-skin="_switch">
+						<em>ON</em>
+						<i></i>
+					</div>
+				</div>
+
+				<div class="layui-input-block" style="display: inline-block;margin-left:0;">
+					<label class="layui-form-label" style="font-weight:bold;width: auto;">降权-</label>
+					<input type="checkbox" lay-filter="switchminus" lay-skin="switch" lay-text="ON|OFF" checked="">
+					<div class="layui-unselect layui-form-switch" lay-skin="_switch">
+						<em>ON</em>
+						<i></i>
+					</div>
+				</div>
+
+				<div class="layui-input-block" style="display: inline-block;margin-left:0;">
+					<label class="layui-form-label" style="font-weight:bold;width: auto;">加权+</label>
+					<input type="checkbox" lay-filter="switchplus" lay-skin="switch" lay-text="ON|OFF" checked="">
+					<div class="layui-unselect layui-form-switch" lay-skin="_switch">
+						<em>ON</em>
+						<i></i>
+					</div>
+				</div>
+
+				<div class="layui-input-block" style="display: inline-block;margin-left:0;">
+					<label class="layui-form-label" style="font-weight:bold;width: auto;">删除X</label>
+					<input type="checkbox" lay-filter="switchdel" lay-skin="switch" lay-text="ON|OFF" checked="">
+					<div class="layui-unselect layui-form-switch" lay-skin="_switch">
+						<em>ON</em>
+						<i></i>
+					</div>
+				</div>
+
+				<div class="layui-input-block" style="display: inline-block;margin-left:0;">
+					<label class="layui-form-label" style="font-weight:bold;width: auto;">加权符号切换</label>
+					<input type="checkbox" lay-filter="switchicon" lay-skin="switch" lay-text="( )|{ }">
+					<div class="layui-unselect layui-form-switch" lay-skin="_switch">
+						<em>{ }</em>
+						<i></i>
+					</div>
+				</div>
+
+
+				<div class="layui-input-block" style="float:right">
+					<label class="layui-form-label" style="font-weight:bold;width: auto;">R18</label>
+					<input type="checkbox" name="switch" lay-skin="switch" lay-text="ON|OFF" lay-filter="switchr18" value="1">
+					<div class="layui-unselect layui-form-switch" lay-skin="_switch">
+						<em>OFF</em>
+						<i></i>
+					</div>
+				</div>
+			</form>
+
+			<div id="elements-container" style="min-height: 100px;height: auto;line-height: 20px;padding: 6px 10px;resize: vertical;">
+
+
+				<div id="addtag"></div>
+			</div>
+
+
+
+			<div style="display: flex;flex-flow: row nowrap;">
+				<div class="layui-form-item layui-form-text" style="flex: 100 100 0%;display: inline-block;vertical-align: middle;">
+					<!--label class="layui-form-label">正</label-->
+					<div class="layui-input-block" style="margin-left:0px;">
+						<textarea id="tagarea" class="layui-textarea" style=""></textarea>
+						<textarea id="tagareb" class="layui-textarea" style="min-height: 20px;" placeholder="在此输入自定义tag组合，点击复制的时候，会加到末尾。后期会在下方做添加自定义tag的功能。"></textarea>
+					</div>
+				</div>
+
+				<div align="center" style="width: auto;margin-top: 5px;margin-left:5px;display: inline-block;vertical-align: middle;">
+					<div>
+						<button class="layui-btn layui-btn-sm layui-btn-normal" onclick="copytag()">复制 Copy</button>
+						<button class="layui-btn layui-btn-sm layui-btn-danger" onclick="cleartag()">清空 Clear</button>
+					</div>
+					<button class="layui-btn layui-btn-sm layui-btn" style="width: 100%;margin-top:5px;" onclick="stag()">筛选 Search</button>
+
+
+					<!--div style="margin-top:10px;pointer-events:none;opacity:0;">
+<button class="layui-btn layui-btn-sm layui-btn-warm" onclick="randtag()">随机 Rand</button>
+<button class="layui-btn layui-btn-sm layui-btn-normal" onclick="savetag()">保存 Save</button>
+</div-->
+				</div>
+			</div>
+
+			<div style="display: flex;flex-flow: row nowrap;">
+				<div class="layui-form-item layui-form-text" style="flex: 100 100 0%;display: inline-block;vertical-align: middle;">
+					<!--label class="layui-form-label">正</label-->
+					<div class="layui-input-block" style="margin-left:0px;">
+						<textarea id="tagarea2" class="layui-textarea" style="min-height: 10px;">lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry, bad feet,</textarea>
+					</div>
+				</div>
+
+				<div align="center" style="width: auto;margin-top:5px;margin-left:10px;display: inline-block;vertical-align: middle;">
+					<div style=" margin-left:0">
+						<button class="layui-btn layui-btn-sm layui-btn-normal" onclick="copytag2()">复制 Copy</button>
+						<button class="layui-btn layui-btn-sm layui-btn-normal" onclick="savetag2()">保存 Save</button>
+					</div>
+					<div style="margin-left:0;margin-top: 5px;">
+						<button class="layui-btn layui-btn-sm layui-btn-normal" onclick="backtag2()">默认 Default</button>
+						<button class="layui-btn layui-btn-sm layui-btn-danger" onclick="cleartag2()">清空 Clear</button>
+					</div>
+				</div>
+			</div>
+			<div class="layui-tab layui-tab-card" id="tags">
+				<ul class="layui-tab-title">
+					<li class="layui-this">Tags加载中...</li>
+				</ul>
+				<div class="layui-tab-content" style="height: 500px;overflow-y: scroll;">
+
+				</div>
+			</div>
+		</div>
+		<br>
+		<br>
+		<br>
+
+		<hr>
+
+
+
+		<div id="hint" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background-color:rgba(0,0,0,0.5)">
+			<div style="position:fixed;top:3%;left:3%;width:86%;height:85%;background-color:rgba(0,0,0,0.7);color: white;border-radius: 20px;padding: 30px;z-index:999;overflow-y: scroll;">
+				<div align="right" style="float:right">
+					<button class="layui-btn layui-btn-primary" onclick="closehint()">关闭</button>
+				</div>
+				<h2>全新的2.0版本上线！使用说明：</h2>
+				<div class="layui-text" style="color:white">
+					<ul>
+						<li>下方选择tag后，可在上方拖拽排序，tag的顺序对生成结果有影响，越靠前越优先。</li>
+						<li>开关可隐藏或显示中英文以及按钮</li>
+						<li>默认的加权标签是NovelAI/Naifu的 { }，如果你使用Stable Diffusion，可以点击切换成 [ ]</li>
+						<li>这是tag生成器，画图还需去Novelai或者StableDiffusion，本地版在线版都行，可参考：<a target="_blank" href="https://www.kdocs.cn/l/cvg8ccOGj5sq">NovelAI资源大全</a>
+						</li>
+						<li>NovelAI在线免费生成：<a target="_blank" href="https://aitags.fun/">https://aitags.fun/</a>
+						</li>
+					</ul>
+				</div>
+				<br>
+				<br>
+				<h2>小贴士：</h2>
+				<div class="layui-text" style="color:white">
+					<ul>
+						<li>NovelAI的训练数据来自国外动漫图片网站danbooru，因此，生成标签也是这两个网站自带的那些。本工具目前收集了常用的800+个tag。但是后来在官方流出版的\models\tags.json文件中，发现了模型的全部tag，一共39000+，正在整理。</li>
+						<li>可以输入风格、背景、人物描述、装饰、动作，甚至性格等等……输入一整段话也是可以的，ai会去匹配这段话中的关键词。</li>
+						<li>*不存在的tag也是可以出东西的，比如hot spring，就是能出泡温泉，不知道为什么。</li>
+						<li>NovelAI/Naifu中，{}可以用来增加权重，就是会优先生成有大括号相关的内容。每个大括号权重是x1.05，普通的是1，可以嵌套，例如 {{bondage}}</li>
+						<li>Stable-diffusion中，增加权重的是普通的英文括号()，每个括号权重是x1.1，也可以嵌套，例如 ((bondage))</li>
+						<li>[]可以用来减少权重，此外，可以输入反向tag来阻止ai生成不想要的图片。官方版本在右下角，stable-diffusion的在第二行。</li>
+						<li>NovelAI资源整合+TAG大全：<a target="_blank" href="https://wolfchen.top/tag/jump.html?f">https://www.kdocs.cn/l/cvg8ccOGj5sq</a>
+						</li>
+
+						<li>AI绘图指南WIKI<a target="_blank" href="https://aiguidebook.top/">https://aiguidebook.top/</a>
+						</li>
+
+					</ul>
+				</div>
+				<br>
+				<br>
+
+				<div>
+					<div style="width: 50%;float: left;">
+						<h2>别人做的生成器：</h2>
+						<a target="_blank" href="https://wolfchen.top/tag/">NovelAI tag生成器(本站的UI来源)</a>
+						<br>
+						<a target="_blank" href="https://tags.novelai.dev/">Danbooru 标签超市</a>
+						<br>
+						<a target="_blank" href="https://magic-tag.netlify.app/">魔导绪论</a>
+						<br>
+						<a target="_blank" href="https://aitag.top/">魔咒百科词典</a>
+						<br>
+						<a target="_blank" href="https://thereisnospon.github.io/NovelAiTag/">NovelAiTag</a>
+						<br>
+						<a target="_blank" href="https://www.bilibili.com/video/BV1JK411Q7MS/">AI绘图魔导书（APP）</a>
+						<br>
+						<a target="_blank" href="https://www.bilibili.com/read/cv19028791">AI提词器（软件）</a>
+						<br>
+
+						<br>
+						<h2>相关工具：</h2>
+						<li>bigjpg图片无损放大（在线）：<a target="_blank" href="https://bigjpg.com/">https://bigjpg.com/</a>
+						</li>
+
+						<li>waifu2x图片无损放大（在线）：<a target="_blank" href="http://waifu2x.udp.jp/">http://waifu2x.udp.jp/</a>
+						</li>
+						<li>图片无损放大（本地）： <a target="_blank" href="https://github.com/xinntao/Real-ESRGAN-ncnn-vulkan">Real-ESRGAN-ncnn-vulkan</a> 下载链接： <a target="_blank" href="https://github.com/xinntao/Real-ESRGAN/releases/download/v0.2.5.0/realesrgan-ncnn-vulkan-20220424-windows.zip">Windows</a> / <a target="_blank" href="https://github.com/xinntao/Real-ESRGAN/releases/download/v0.2.5.0/realesrgan-ncnn-vulkan-20220424-ubuntu.zip">Linux</a> / <a target="_blank" href="https://github.com/xinntao/Real-ESRGAN/releases/download/v0.2.5.0/realesrgan-ncnn-vulkan-20220424-macos.zip">MacOS</a>
+						</li>
+
+						<br>
+						<h2>相关文章：</h2>
+						<a target="_blank" href="https://www.bilibili.com/video/BV1m84y1B7Ny/">分享ai绘图的4万个TAG</a>
+						<br>
+						<a target="_blank" href="https://www.bilibili.com/read/cv19061010">novelAI关键词可用tag自整理Excel表</a>
+						<br>
+						<a target="_blank" href="https://www.bilibili.com/read/cv19007299?from=articleDetail">NovelAI可用tag关键词收集（一 · 姿势，构图）</a>
+						<br>
+						<a target="_blank" href="https://www.bilibili.com/read/cv19008409">NovelAI可用tag关键词收集（二 · 头发，表情）</a>
+						<br>
+						<a target="_blank" href="https://www.bilibili.com/read/cv19010392">NovelAI可用tag关键词收集（三 · 身体，服装）</a>
+						<br>
+						<a target="_blank" href="https://www.bilibili.com/read/cv19008409">NovelAI可用tag关键词收集（四 · 背景，其他）</a>
+						<br>
+						<a target="_blank" href="https://www.bilibili.com/read/cv19019708">关于Novel AI 的prompt tag的一点理解（tag分享）</a>
+						<br>
+						<a target="_blank" href="https://tieba.baidu.com/p/8085717971?pid=145803217648&amp;cid=0#145803217648">不要乱输入咒语了</a>
+						<br>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="ds" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background-color:rgba(0,0,0,0.5)">
+			<div style="position:fixed;top:3%;left:3%;width:86%;height:85%;background-color:rgba(0,0,0,0.7);color: white;border-radius: 20px;padding: 30px;z-index:999;overflow-y: scroll;">
+				<div align="right" style="float:right">
+					<button class="layui-btn layui-btn-primary" onclick="closeds()">关闭</button>
+				</div>
+				<h2>更新日志<h2>
+				<div class="layui-text" style="color:white">
+					<ul>
+						<li>2023-2-5  站点建立</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<script src="./js/main.js" charset="utf-8"></script>
+		<script src="./js/layui.js" charset="utf-8"></script>
+		<script src="./js/post.js" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function() {
+			$('.draggable-element').arrangeable();
+			$('div').arrangeable({dragSelector: '.drag-area'});
+			});
+		</script>
+		<script src="./js/index.js" charset="utf-8"></script>
+		<script type="text/javascript" src="./js/drag-arrange.js"></script>
+	</body>
+</html>
