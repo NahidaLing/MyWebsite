@@ -12,9 +12,9 @@ window.addEventListener('load', function () {
 	});
 	let bgimg = Math.floor(Math.random() * 9) + 1;
 	document.body.style.background = "url(https://api.maho.cc/random-img/pc.php?12) no-repeat"//"url(./source/img/background" + bgimg + ".webp) no-repeat"
-	// loadJS('source/js/yinghua.js',function(){
+	loadJS('source/js/yinghua.js',function(){
 
-	// });
+	});
 
 	showCard ("test","page-home");
 })
