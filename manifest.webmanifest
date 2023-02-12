@@ -1,0 +1,15 @@
+{
+  "background_color": "purple",
+  "description": "CATNIANG-FEITUの个人主页",
+  "display": "fullscreen",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "256x256",
+      "type": "image/png"
+    }
+  ],
+  "name": "CATNIANG-FEITU 个人主页",
+  "short_name": "CATNIANG-FEITU",
+  "start_url": "/index.html"
+}
