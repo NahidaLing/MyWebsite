@@ -11,7 +11,7 @@ window.addEventListener('load', function () {
 		iconColor: '#efefef',
 	});
 	let bgimg = Math.floor(Math.random() * 9) + 1;
-	document.body.style.background = "url(./source/img/background" + bgimg + ".webp) no-repeat"
+	document.body.style.background = "url(./source/img/background" + bgimg + ".webp) center no-repeat"
 	loadJS('source/js/yinghua.js',function(){
 
 	});
@@ -72,33 +72,11 @@ layui.config({
 layui.use(['layer'], function () { //引入需要的模块
 	var $ = layui.jquery, layer = layui.layer //弹层
 	window.bt_email = function () {
-		layer.open({
-			title: '邮箱联系',
-			content: '<span style="color:#000000">EMAIL:catfeitu@qq.com</span>',
-			btn: ['打开邮箱', '复制邮箱', '取消'],
-			yes: function(index, layero){
-				layer.open({
-					type: 2,
-					area: ['90%', '98%'],
-					title: '邮箱联系',
-					content: 'http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=RyQmMyEiLjMyBzY2aSQoKg',
-					maxmin:true
-				});
-			},
-			btn2: function(index, layero){
-				copy('catfeitu@qq.com');
-				iziToast.show({
-					timeout: 1000,
-					icon: "fa-solid fa-circle-exclamation",
-					message: '复制成功'
-				});
-			},
-			btn3: function(index, layero){
-			},
-			cancel: function(){ 
-				//右上角关闭回调
-				//return false 开启该代码可禁止点击该按钮关闭
-			}
+		copy('catfeitu@qq.com');
+		iziToast.show({
+			timeout: 1000,
+			icon: "fa-solid fa-circle-exclamation",
+			message: '邮箱地址 catfeitu@qq.com (已自动复制)'
 		});
 	};
 	window.bt_qq = function () {
