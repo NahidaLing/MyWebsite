@@ -183,8 +183,8 @@ var tncode = {
     _send_result_success:function(responseText,responseXML){
         tncode._doing = false;
         if(responseText=='ok'){
-            tncode._tncode.innerHTML = '√验证成功';
-            tncode._showmsg('√验证成功',1);
+            tncode._tncode.innerHTML = '验证成功';
+            tncode._showmsg('验证成功',1);
             tncode._result = true;
             document.getElementByClassName('hgroup').style.display="block";
             setTimeout(tncode.hide,3000);
@@ -356,7 +356,7 @@ var tncode = {
     _html:function(){
         var d = document.getElementById('tncode_div_bg');
         if(d)return;
-        var html = '<div class="tncode_div_bg" id="tncode_div_bg"></div><div class="tncode_div" id="tncode_div"><div class="loading">加载中</div><canvas class="tncode_canvas_bg"></canvas><canvas class="tncode_canvas_mark"></canvas><div class="hgroup"></div><div class="tncode_msg_error"></div><div class="tncode_msg_ok"></div><div class="slide"><div class="slide_block"></div><div class="slide_block_text">拖动左边滑块完成上方拼图</div></div><div class="tools"><div class="tncode_close"></div><div class="tncode_refresh"></div><div class="tncode_tips"><a href="http:\/\/www.39gs.com/archive/259.html" target=_blank>39gs.com</a></div></div></div>';
+        var html = '<div class="tncode_div_bg" id="tncode_div_bg"></div><div class="tncode_div" id="tncode_div"><div class="loading" onselectstart="return false;" unselectable="on">加载中</div><canvas class="tncode_canvas_bg"></canvas><canvas class="tncode_canvas_mark"></canvas><div class="hgroup"></div><div class="tncode_msg_error"></div><div class="tncode_msg_ok"></div><div class="slide"><div class="slide_block"></div><div class="slide_block_text" onselectstart="return false;" unselectable="on">拖动左边滑块完成上方拼图</div></div><div class="tools"><div class="tncode_close"></div><div class="tncode_refresh"></div><div class="tncode_tips"></div></div></div>';
         var bo = document.getElementsByTagName('body');
         appendHTML(bo[0],html);
     },
